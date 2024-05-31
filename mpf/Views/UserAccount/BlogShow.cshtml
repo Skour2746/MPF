@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "BlogShow";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<div class="col-md-9">
+    <div class="dashboard-title   fl-wrap">
+        <h3>Blogs Listing </h3>
+    </div>
+    <!-- profile-edit-container-->
+    <div class="profile-edit-container fl-wrap block_box">
+     
+        <!-- reviews-comments-item -->
+        @foreach (var item in ViewBag.BlogShow)
+        {
+        <div class="reviews-comments-item">
+            <div class="review-comments-avatar">
+                <img src="~/Content/mpfimages/Professional/@item.image" alt="">
+            </div>
+            <div class="reviews-comments-item-text fl-wrap">
+                <div class="reviews-comments-header fl-wrap">
+                    <h4><a href="#">@item.Heading</a></h4>
+                   
+                </div>
+                <p>@item.Description</p>
+                <div class="review-images ">
+                    <a href="~/Content/MainWebsite/images/all/13.jpg" class="image-popup"><img src="~/Content/mpfimages/Blog/@item.image1" alt=""></a>
+                </div>
+                <div class="reviews-comments-item-footer fl-wrap">
+                    <div class="reviews-comments-item-date"><span><i class="far fa-calendar-check"></i>@item.rts</span></div>
+                </div>
+            </div>
+        </div>
+        <!--reviews-comments-item end-->
+        }
+    </div>
+    <!-- profile-edit-container end-->
+    <div class="pagination">
+        <a href="#" class="prevposts-link"><i class="fas fa-caret-left"></i><span>Prev</span></a>
+        <a href="#">1</a>
+        <a href="#" class="current-page">2</a>
+        <a href="#">3</a>
+        <a href="#">...</a>
+        <a href="#">7</a>
+        <a href="#" class="nextposts-link"><span>Next</span><i class="fas fa-caret-right"></i></a>
+    </div>
+</div>

@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="hero-slider_wrap fl-wrap">
+    <div class="hero-slider">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                @foreach (var item in ViewBag.SliderList)
+                {
+                    <!--hero-slider-item-->
+                    <div class="swiper-slide">
+                        <div class="hero-slider-item fl-wrap">
+                            <div class="bg-tabs-wrap">
+                                <div class="bg bg2-@item.id" style="background-image: url('@Url.Content("~/Content/mpfimages/Slider/" + item.image)'); height: 532px; width: 100%; background-size: cover;"></div>               
+                                <div class="overlay op7"></div>
+                            </div>
+                            <div class="container small-container">
+                                <div class="intro-item fl-wrap">
+                                    <span class="section-separator"></span>
+                                    <div class="bubbles">
+                                        <h1>@item.Heading</h1>
+                                    </div>
+                                    <h3>@item.Description</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--hero-slider-item end-->
+                }
+            </div>
+        </div>
+    </div>
+    <div class="listing-carousel_pagination hero_pagination">
+        <div class="listing-carousel_pagination-wrap"></div>
+    </div>
+    <div class="slider-hero-button-prev shb color2-bg"><i class="fas fa-caret-left"></i></div>
+    <div class="slider-hero-button-next shb color2-bg"><i class="fas fa-caret-right"></i></div>
+</div>
+
+
+<section id="sec1" data-scrollax-parent="true">
+    <div class="container">
+        <div class="section-title">
+            <h2> About Us</h2>
+            <div class="section-subtitle">About Us</div>
+            <p>Explore some of the best tips from around the city from our partners and friends.</p>
+            <span class="section-separator"></span>
+        </div>
+        <!--about-wrap -->
+        <div class="about-wrap">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="list-single-main-media fl-wrap" style="box-shadow: 0 9px 26px rgba(58, 87, 135, 0.2);">
+                        <img src="~/Content/MainWebsite/images/all/55.jpg" class="respimg" alt="">
+                        <a href="https://vimeo.com/70851162" class="promo-link   image-popup"><i class="fal fa-video"></i><span>Our Story</span></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="ab_text">
+                        <div class="ab_text-title fl-wrap">
+                            <h3>Our Awesome  Team <span>Story</span></h3>
+                            <h4>Check video presentation to find   out more about us .</h4>
+                            <span class="section-separator fl-sec-sep"></span>
+                        </div>
+                        <p>Ut euismod ultricies sollicitudin. Curabitur sed dapibus nulla. Nulla eget iaculis lectus. Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum, est elit finibus tellus, ut tristique elit risus at metus. Sed tempor iaculis massa faucibus feugiat. </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra.
+                        </p>
+                        <a href="#sec3" class="btn color2-bg float-btn custom-scroll-link">Our Team <i class="fal fa-users"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!--section end-->
+<div class="sec-circle fl-wrap"></div>
+<!--section -->
+
+<section class="gray-bg hidden-section particles-wrapper">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Categories</h2>
+            <div class="section-subtitle">Our Categories</div>
+            <span class="section-separator"></span>
+            <p>In ut odio libero, at vulputate urna. Nulla tristique mi a massa convallis cursus.</p>
+        </div>
+        <div class="listing-item-grid_container fl-wrap">
+            <div class="row">
+                @foreach (var item in ViewBag.Categoryitems)
+                {
+                    <!--  listing-item-grid  -->
+                    <div class="col-sm-4">
+                        <div class="listing-item-grid">
+                            <div class="bg" style="width:387px;" data-bg="">
+                                <img src="~/Content/mpfimages/category/@item.image" />
+                            </div>
+                            <div class="d-gr-sec"></div>
+                            <div class="listing-counter color2-bg"><span>16 </span> Locations</div>
+                            <div class="listing-item-grid_title">
+                                <h3><a href="listing.html">@item.CategoryName</a></h3>
+                                <p>Constant care and attention to the patients makes good record</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  listing-item-grid end  -->
+                }
+                </div>
+        </div>
+        <a href="@Url.Action("Category","Home")" class="btn dec_btn   color2-bg">View All Categories<i class="fal fa-arrow-alt-right"></i></a>
+    </div>
+
+</section>
+
+
+<section class="slw-sec" id="sec1">
+    <div class="section-title">
+        <div class="section-title">
+            <div class="section-title">
+                <div class="section-title">
+                    <div class="section-title">
+                        <h2>Our Professionals</h2>
+                        <div class="section-subtitle">Our Professionals</div>
+                        <span class="section-separator"></span>
+                        <p>Mauris ac maximus neque. Nam in mauris quis libero sodales eleifend. Morbi varius, nulla sit amet rutrum elementum.</p>
+                    </div>
+
+                    <div class="listing-slider-wrap fl-wrap">
+                        <div class="listing-slider fl-wrap">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <!--  swiper-slide  -->
+                                    @foreach (var item in ViewBag.userlist)
+                                    {
+                                        <div class="swiper-slide">
+                                            <div class="listing-slider-item fl-wrap">
+                                                <!-- listing-item  -->
+                                                <div class="listing-item listing_carditem">
+                                                    <article class="geodir-category-listing fl-wrap">
+                                                        <div class="geodir-category-img">
+                                                            <a href="#" class="geodir-category-img-wrap fl-wrap">
+                                                                <img src="~/Content/mpfimages/Professional/@item.image" alt="">
+                                                            </a>
+                                                            <div class="geodir-category-opt">
+                                                                <div class="geodir-category-opt_title">
+                                                                    <h4><a href="listing-single.html">@item.username</a></h4>
+                                                                    <h4><a href="listing-single.html">@item.categoryname</a></h4>
+                                                                    <div class="geodir-category-location"><a href="#"><i class="fas fa-map-marker-alt"></i> @item.Address , @item.Village,@item.Districtid,@item.Stateid   </a></div>
+                                                                </div>
+                                                                <div class="listing_carditem_footer fl-wrap">
+                                                                    <a class="listing-item-category-wrap" href="#">
+                                                                        <div class="listing-item-category red-bg"><i class="fa fa-mobile-alt"></i></div>
+                                                                        <span>@item.PhoneNumber , @item.PhoneNumber2</span>
+                                                                    </a>
+                                                                    <div class="price-level geodir-category_price">
+                                                                        <span class="price-name-tooltip">Pricey</span>
+                                                                    </div>
+                                                                    <div class="post-author" style="float:right;"><a href="#"><span>By , Alisa Noory</span></a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </div>
+                                                <!-- listing-item end -->
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+
+                            <div class="listing-carousel-button listing-carousel-button-next2"><i class="fas fa-caret-right"></i></div>
+                            <div class="listing-carousel-button listing-carousel-button-prev2"><i class="fas fa-caret-left"></i></div>
+                        </div>
+                        <div class="tc-pagination_wrap">
+                            <div class="tc-pagination2"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

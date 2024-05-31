@@ -1,0 +1,161 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <!--=============== basic  ===============-->
+    <meta charset="UTF-8">
+    <title>Townhub - Directory Listing Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <!--=============== css  ===============-->
+    <link type="text/css" rel="stylesheet" href="~/Content/MainWebsite/css/reset.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MainWebsite/css/plugins.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MainWebsite/css/style.css">
+    <link type="text/css" rel="stylesheet" href="~/Content/MainWebsite/css/color.css">
+    <!--=============== favicons ===============-->
+    <link rel="shortcut icon" href="~/Content/MainWebsite/images/favicon.ico">
+</head>
+<body>
+    <!--loader-->
+    <div class="loader-wrap">
+        <div class="loader-inner">
+            <div class="loader-inner-cirle"></div>
+        </div>
+    </div>
+    <!--loader end-->
+    <!-- main start  -->
+    <div id="main">
+        <!--login-column  -->
+        <div class="login-column">
+            <div class="login-column_header">
+                <img src="~/Content/MainWebsite/images/logo3.png" alt="">
+                <div class="clearfix"></div>
+                <h4>Welcome to Login system.</h4>
+            </div>
+            <div class="main-register-holder tabs-act">
+                <div class="main-register fl-wrap">
+                    <ul class="tabs-menu fl-wrap no-list-style">
+                        <li class="current"><a href="#tab-1"><i class="fal fa-sign-in-alt"></i> Login</a></li>
+                        <li><a href="#tab-2"><i class="fal fa-user-plus"></i> Register</a></li>
+                    </ul>
+                    <!--tabs -->
+                    <div class="tabs-container">
+                        <div class="tab">
+                            <!--tab -->
+                            <div id="tab-1" class="tab-content first-tab">
+                                @using (Html.BeginForm("UserLogin", "UserAccount", FormMethod.Post))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="custom-form">
+                                        <form method="post" name="registerform">
+                                            <label>Username or Email Address <span>*</span> </label>
+                                            <input name="useremail" type="text" onClick="this.select()" value="">
+                                            <label>Password <span>*</span> </label>
+                                            <input name="userpass" type="password" onClick="this.select()" value="">
+                                            <button type="submit" class="btn float-btn color2-bg"> Log In <i class="fas fa-caret-right"></i></button>
+                                            <div class="clearfix"></div>
+                                          
+                                        </form>
+                                       
+                                    </div>
+                                }
+                            </div>
+                            <!--tab end -->
+                            <!--tab -->
+                            <div class="tab">
+                                <div id="tab-2" class="tab-content">
+                                    @using (Html.BeginForm("UserRegister", "UserAccount", FormMethod.Post))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="custom-form">
+                                            <form class="main-register-form" id="main-register-form2">
+                                                <div class="main-register-form" id="main-register-form2">
+                                                    <label>Full Name <span>*</span> </label>
+                                                    <input name="username" type="text" onclick="this.select()" value="">
+                                                    <label>Email Address <span>*</span></label>
+                                                    <input name="useremail" type="text" onclick="this.select()" value="">
+                                                    <label>Password <span>*</span></label>
+                                                    <input name="userpass" type="password" onclick="this.select()" value="">
+
+                                                    <div class="clearfix"></div>
+                                                    <button type="submit" class="btn float-btn color2-bg"> Register  <i class="fas fa-caret-right"></i></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    }
+
+                                </div>
+                            </div>
+                            <!--tab end -->
+                        </div>
+                        <!--tabs end -->
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--login-column end-->
+        <!--login-column-bg  -->
+        <div class="login-column-bg gradient-bg">
+            <!--ms-container-->
+            <div class="slideshow-container" data-scrollax="properties: { translateY: '300px' }">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!--ms_item-->
+                        <div class="swiper-slide">
+                            <div class="ms-item_fs fl-wrap full-height">
+                                <div class="bg" data-bg="~/Content/MainWebsite/images/bg/29.jpg">
+                                    <img src="~/Content/MainWebsite/images/bg/29.jpg"/>
+                                </div>
+                                <div class="overlay op7"></div>
+                            </div>
+                        </div>
+                        <!--ms_item end-->
+                        <!--ms_item-->
+                        <div class="swiper-slide ">
+                            <div class="ms-item_fs fl-wrap full-height">
+                                <div class="bg" data-bg="~/Content/MainWebsite/images/bg/13.jpg">
+                                </div>
+                                <div class="overlay op7"></div>
+                            </div>
+                        </div>
+                        <!--ms_item end-->
+                        <!--ms_item-->
+                        <div class="swiper-slide">
+                            <div class="ms-item_fs fl-wrap full-height">
+                                <div class="bg" data-bg="~/Content/MainWebsite/images/bg/35.jpg"></div>
+                                <img src="~/Content/MainWebsite/images/bg/35.jpg" />
+
+                                <div class="overlay op7"></div>
+                            </div>
+                        </div>
+                        <!--ms_item end-->
+                    </div>
+                </div>
+            </div>
+            <!--ms-container end-->
+            <div class="login-promo-container">
+                <div class="container">
+                    <div class="video_section-title fl-wrap">
+                        <h4>Aliquam erat volutpat interdum</h4>
+                        <h2>Get ready to start your exciting journey. <br> Our agency will lead you through the amazing digital world</h2>
+                    </div>
+                    <a href="https://vimeo.com/253953667" class="promo-link big_prom   image-popup"><i class="fal fa-play"></i><span>Promo Video</span></a>
+                </div>
+            </div>
+        </div>
+        <!--login-column-bg end-->
+    </div>
+    <!-- Main end -->
+    <!--=============== scripts  ===============-->
+    <script src="~/Content/MainWebsite/js/jquery.min.js"></script>
+    <script src="~/Content/MainWebsite/js/plugins.js"></script>
+    <script src="~/Content/MainWebsite/js/scripts.js"></script>
+</body>
+</html>

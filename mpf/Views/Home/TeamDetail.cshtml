@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "TeamDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--section-->
+<section class="gray-bg small-padding no-top-padding-sec" id="sec1">
+    <div class="container">
+        <div class="breadcrumbs inline-breadcrumbs fl-wrap block-breadcrumbs">
+            <a href="#">Home</a><span>Team Detail</span>
+        </div>
+        <div class="share-holder hid-share sing-page-share top_sing-page-share">
+            <div class="share-container  isShare"></div>
+        </div>
+        <div class="mob-nav-content-btn  color2-bg show-list-wrap-search ntm fl-wrap"><i class="fal fa-filter"></i>  Filters</div>
+        <div class="fl-wrap">
+            <div class="row">
+
+                <div class="col-md-12">
+                    @foreach (var item in ViewBag.TeamDetail)
+                    {
+                        <div class="fl-wrap block_box product-header" style="margin-bottom:50px;">
+                            <div class="product-header-details">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="single-slider-wrap shop-media-img">
+                                            <div class="single-slider fl-wrap">
+                                                <div class="swiper-container">
+                                                    <div class="swiper-wrapper lightgallery">
+                                                        <img style="height:350px;" src="~/Content/mpfimages/Professional/@item.image" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <h3>@item.username</h3>
+                                        <h4 style="text-align: left; font-size: 20px; color: #566985;">@item.Post</h4>
+                                        <span class="fw-separator" style="margin:0px;"></span>
+                                        <br />
+                                        <h5 style="text-align: left; font-size: 16px; color: #566985;">Profession:- @item.categoryname</h5>
+                                        <h5 style="text-align: left; font-size: 16px; color: #566985;">Contact:- @item.PhoneNumber , @item.PhoneNumber2</h5>
+                                        <h5 style="text-align:left; font-size: 16px; color: #566985;">Email:- @item.useremail</h5>
+                                        <h5 style="text-align:left; font-size: 16px; color: #566985;">Address:- @item.Address, @item.Village, @item.Districtid, @item.Stateid</h5>
+                                        @*<span class="fw-separator"></span>*@
+                                        <div class="clearfix"></div>
+                                        <span class="fw-separator"></span>
+                                        <p>@item.Description</p>
+
+                                    </div>
+                                </div>
+                                <span class="fw-separator"></span>
+
+                            </div>
+                        </div>
+                    }
+                
+
+                        <!-- list-single-main-item -->
+                        <div class="list-single-main-item fl-wrap block_box ">
+                            <div class="list-single-main-item-title">
+                                <h3>Blogs</h3>
+                            </div>
+                            <div class="list-single-main-item_content fl-wrap">
+                                <!-- shop-item  -->
+                                @foreach (var item in ViewBag.Bloglist)
+                                {
+                                <div class="shop-item" style="width:30%;">
+                                    <div class="shop-item-media">
+                                        <a href="product-single.html">
+                                            <img src="~/Content/mpfimages/Blog/@item.image" alt="">
+                                            <div class="overlay"></div>
+                                        </a>
+                                        <div class="geodir-category-opt">
+                                            <div class="listing-rating-count-wrap">
+                                                <div class="listing-rating card-popup-rainingvis" data-starrating2="4"></div>
+                                                <br>
+                                                <div class="reviews-count">12 reviews</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="shop-item_title">
+                                        <h4><a href="product-single.html">@item.Heading</a></h4>
+                                        <p class="shop-item_price">@item.Description</p>
+                                        <a href="product-single.html" class="shop-item_link color-bg">Details</a>
+                                    </div>
+                                </div>
+                                }
+                                <!-- shop-item end -->
+                                <!-- shop-item  -->
+                                
+                                <!-- shop-item end -->
+                            </div>
+                        </div>
+                        <!-- list-single-main-item end -->
+                        <!-- shop-tabs-->
+                        <div class="tabs-act fl-wrap"style="width:50%;">
+                           
+                            <!-- shop-tabs-->
+                            <!-- shop-tabs-->
+                            <div class="shop-tabs fl-wrap block_box">
+                                <!--tabs -->
+                                <div class="tabs-container fl-wrap" >
+                               
+                                    <!-- Add Review Box -->
+                                    <div id="add-review" class="shop-review-box fl-wrap">
+                                        <!-- Review Comment -->
+                                        <div class="leave-rating-wrap">
+                                            <span class="leave-rating-title">Add a Question: </span>
+                                            
+                                        </div>
+                                        <div id="add-comment" class="add-comment  custom-form" name="rangeCalc">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <label><i class="fal fa-user"></i></label>
+                                                        <input type="text" name="Question" placeholder="Your Name *" value="" />
+                                                    </div>
+                                                   </div>
+                                                <div class="clearfix"></div>
+                                                <button class="submit btn  color2-bg  float-btn">Submit Question <i class="fal fa-paper-plane"></i></button>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                    <!-- Add Review Box / End -->
+                                </div>
+
+                            </div>
+                            <!--tab end-->
+                        </div>
+                        <!--tabs end-->
+                    </div>
+                    <!-- shop-tabs end-->
+
+                </div>
+            </div>
+        </div>
+
+</section>
+<!--section end-->
+<div class="limit-box fl-wrap"></div>
+                </div>
+<!--content end-->
+<!--cart  -->
+<div class="show-cart color2-bg"><i class="far fa-shopping-cart"></i><span>3</span></div>
+<div class="cart-overlay"></div>
+<div class="cart-modal">
+    <div class="cart-modal-wrap fl-wrap">
+        <span class="close-cart color2-bg">Close <i class="fal fa-times"></i> </span>
+        <h3>Your cart</h3>
+        <div class="clear-cart"> <span class="tolt" data-microtip-position="left" data-tooltip="Remove All"><i class="fal fa-trash-alt"></i></span></div>
+        <ul class="cart-modal-list no-list-style fl-wrap">
+            <li>
+                <a class="cart-modal-image" href="product-single.html">
+                    <img src="~/Content/MainWebsite/images/shop/4.jpg" alt="">
+                </a>
+                <div class="cart-modal-det">
+                    <a href="product-single.html">Grilled Filet of Cod</a>
+                    <div class="quantity"><span>1</span> x <span class="woocommerce-Price-amount">$56.15</span></div>
+                </div>
+                <a href="#" class="remove"><i class="fal fa-times-circle"></i></a>
+            </li>
+            <li>
+                <a class="cart-modal-image" href="product-single.html">
+                    <img src="~/Content/MainWebsite/images/shop/2.jpg" alt="">
+                </a>
+                <div class="cart-modal-det">
+                    <a href="product-single.html">Saute Crispy Goats</a>
+                    <div class="quantity"><span>1</span> x <span class="woocommerce-Price-amount">$17.00</span></div>
+                </div>
+                <a href="#" class="remove"><i class="fal fa-times-circle"></i></a>
+            </li>
+            <li>
+                <a class="cart-modal-image" href="product-single.html">
+                    <img src="~/Content/MainWebsite/images/shop/3.jpg" alt="">
+                </a>
+                <div class="cart-modal-det">
+                    <a href="product-single.html">Warm Chocolate Pudding</a>
+                    <div class="quantity"><span>2</span> x <span class="woocommerce-Price-amount">$90.20</span></div>
+                </div>
+                <a href="#" class="remove"><i class="fal fa-times-circle"></i></a>
+            </li>
+        </ul>
+        <div class="cart-modal-total fl-wrap">
+            <span class="cart-modal-total-title">SUBTOTAL:</span> <span class="woocommerce-Price-amount"> $253.55</span>
+        </div>
+        <div class="cart-sb_footer fl-wrap">
+            <a href="cart.html" class="cart_btn  color2-bg">View Cart</a>
+            <a href="#" class="cart_btn  color-bg">Checkout</a>
+        </div>
+    </div>

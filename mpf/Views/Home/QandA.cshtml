@@ -1,0 +1,107 @@
+﻿@model mpf.Models.UserQuesAn
+@{
+    ViewBag.Title = "QandA";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("QandA", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+
+    
+    <!-- scroll-nav-wrapper-->
+    
+    <!-- scroll-nav-wrapper end-->
+    <section class="gray-bg no-top-padding">
+        <div class="container">
+            <div class="breadcrumbs inline-breadcrumbs fl-wrap">
+                <a href="#">Home</a><a href="#">Listings</a><a href="#">New York</a><span>Listing Single</span>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row">
+                <!-- list-single-main-wrapper-col -->
+                <div class="col-md-12">
+                    <!-- list-single-main-wrapper -->
+                    <div class="list-single-main-wrapper fl-wrap" id="sec2">
+                        <div class="list-single-main-media fl-wrap">
+                            <img src="images/all/48.jpg" class="respimg" alt="">
+                            <a href="https://vimeo.com/70851162" class="promo-link   image-popup"><i class="fal fa-video"></i><span>Promo Video</span></a>
+                        </div>
+                        <!-- list-single-main-item -->
+                        <div class="list-single-main-item fl-wrap block_box" id="sec6">
+                            <div class="list-single-main-item-title fl-wrap">
+                                <h3>Ask a Question</h3>
+                            </div>
+                            <!-- Add Review Box -->
+                            <div id="add-review" class="add-review-box">
+                                <!-- Review Comment -->
+                                <form id="add-comment" class="add-comment  custom-form" name="rangeCalc">
+                                    <fieldset>
+                                        
+                                        <div class="list-single-main-item_content fl-wrap">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    @Html.DropDownListFor(model => model.Professionid, (IEnumerable<SelectListItem>)ViewBag.ProfessionId, "-- Select Category --", new { @class = "chosen-select no-search-select" })
+
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label><i class="fal fa-user icon"></i></label>
+                                                    <input type="text" name="Question" class="ssss" placeholder="Your Name *" value="" />
+                                                </div>
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="listsearch-input-item fl-wrap">
+                                                
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <button class="btn  color2-bg  float-btn">Submit<i class="fal fa-paper-plane"></i></button>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                            <!-- Add Review Box / End -->
+                        </div>
+                        <!-- list-single-main-item end -->
+                        <!-- list-single-main-item -->
+                        <div class="list-single-main-item fl-wrap block_box" id="sec5">
+                            <div class="list-single-main-item-title">
+                                <h3>Answers</h3>
+                            </div>
+                            <!--reviews-score-wrap-->
+                            
+                            <!-- reviews-score-wrap end -->
+                            <div class="list-single-main-item_content fl-wrap">
+                                <div class="reviews-comments-wrap">
+                                    <!-- reviews-comments-item -->
+                                    <div class="reviews-comments-item">
+                                        @*<div class="review-comments-avatar">
+                                            <img src="images/avatar/4.jpg" alt="">
+                                        </div>*@
+                                        <div class="reviews-comments-item-text fl-wrap">
+                                            <div class="reviews-comments-header fl-wrap">
+                                                <h4><a href="#">Liza Rose</a></h4>
+                                       
+                                            </div>
+                                            <p>" Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. "</p>
+                                          
+                                        </div>
+                                    </div>
+                                    <!--reviews-comments-item end-->
+                              
+                                </div>
+                            </div>
+                        </div>
+                        <!-- list-single-main-item end -->
+
+                    </div>
+                </div>
+                <!-- list-single-main-wrapper-col end -->
+                <!-- list-single-sidebar -->
+                
+                <!-- list-single-sidebar end -->
+            </div>
+        </div>
+    </section>
+    <div class="limit-box fl-wrap"></div>
+}

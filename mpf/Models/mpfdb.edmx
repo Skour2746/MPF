@@ -1,0 +1,553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="mpfdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AdminLogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="255" />
+          <Property Name="pasword" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="AnserTbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Answer" Type="varchar(max)" />
+          <Property Name="Quesid" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="image" Type="varchar" MaxLength="255" />
+          <Property Name="Heading" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="varchar" MaxLength="255" />
+          <Property Name="image" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DegreeTbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="degree" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EventMgmt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="255" />
+          <Property Name="Heading" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Loc_Districtn">
+          <Key>
+            <PropertyRef Name="District_Code" />
+          </Key>
+          <Property Name="District_Code" Type="int" Nullable="false" />
+          <Property Name="District_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="State_Code" Type="smallint" Nullable="false" />
+          <Property Name="District_Priority" Type="tinyint" Nullable="false" />
+          <Property Name="District_Active" Type="bit" Nullable="false" />
+          <Property Name="DisCode" Type="int" Nullable="false" />
+          <Property Name="pincode" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Loc_State">
+          <Key>
+            <PropertyRef Name="State_Code" />
+          </Key>
+          <Property Name="State_Code" Type="int" Nullable="false" />
+          <Property Name="State_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Country_Code" Type="smallint" Nullable="false" />
+          <Property Name="State_Priority" Type="tinyint" Nullable="false" />
+          <Property Name="State_Active" Type="bit" Nullable="false" />
+          <Property Name="CourierState" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="NewsTbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Heading" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="bit" Nullable="false" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Services">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Profession_id" Type="varchar" MaxLength="255" />
+          <Property Name="Services" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="255" />
+          <Property Name="Heading" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar" MaxLength="55" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Upcoming_Events">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="image" Type="varchar" MaxLength="255" />
+          <Property Name="Heading" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserQuesAn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Question" Type="nvarchar(max)" />
+          <Property Name="Professionid" Type="varchar" MaxLength="255" />
+          <Property Name="rts" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserRegister">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="255" />
+          <Property Name="useremail" Type="varchar" MaxLength="255" />
+          <Property Name="userpass" Type="varchar" MaxLength="255" />
+          <Property Name="Profession" Type="int" />
+          <Property Name="Address" Type="varchar" MaxLength="255" />
+          <Property Name="PhoneNumber" Type="varchar" MaxLength="255" />
+          <Property Name="PhoneNumber2" Type="varchar" MaxLength="255" />
+          <Property Name="State" Type="int" />
+          <Property Name="District" Type="int" />
+          <Property Name="Village" Type="varchar" MaxLength="255" />
+          <Property Name="image" Type="varchar" MaxLength="255" />
+          <Property Name="Description" Type="varchar(max)" />
+          <Property Name="status" Type="bit" />
+          <Property Name="rts" Type="datetime" />
+          <Property Name="Post" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityContainer Name="mpfdbModelStoreContainer">
+          <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AnserTbl" EntityType="Self.AnserTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DegreeTbl" EntityType="Self.DegreeTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EventMgmt" EntityType="Self.EventMgmt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loc_Districtn" EntityType="Self.Loc_Districtn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loc_State" EntityType="Self.Loc_State" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NewsTbl" EntityType="Self.NewsTbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Upcoming_Events" EntityType="Self.Upcoming_Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserQuesAn" EntityType="Self.UserQuesAn" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="mpfdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AdminLogin">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="pasword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AnserTbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Quesid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Blog">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Heading" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="DegreeTbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="degree" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EventMgmt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Heading" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Loc_Districtn">
+          <Key>
+            <PropertyRef Name="District_Code" />
+          </Key>
+          <Property Name="District_Code" Type="Int32" Nullable="false" />
+          <Property Name="District_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="State_Code" Type="Int16" Nullable="false" />
+          <Property Name="District_Priority" Type="Byte" Nullable="false" />
+          <Property Name="District_Active" Type="Boolean" Nullable="false" />
+          <Property Name="DisCode" Type="Int32" Nullable="false" />
+          <Property Name="pincode" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Loc_State">
+          <Key>
+            <PropertyRef Name="State_Code" />
+          </Key>
+          <Property Name="State_Code" Type="Int32" Nullable="false" />
+          <Property Name="State_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Country_Code" Type="Int16" Nullable="false" />
+          <Property Name="State_Priority" Type="Byte" Nullable="false" />
+          <Property Name="State_Active" Type="Boolean" Nullable="false" />
+          <Property Name="CourierState" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="NewsTbl">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Heading" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" Nullable="false" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Profession_id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Services" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Slider">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Heading" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="55" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Upcoming_Events">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Heading" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserQuesAn">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Professionid" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserRegister">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="useremail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="userpass" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Profession" Type="Int32" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PhoneNumber2" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="District" Type="Int32" />
+          <Property Name="Village" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="image" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="rts" Type="DateTime" Precision="3" />
+          <Property Name="Post" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="mpfdbEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AdminLogins" EntityType="Self.AdminLogin" />
+          <EntitySet Name="AnserTbls" EntityType="Self.AnserTbl" />
+          <EntitySet Name="Blogs" EntityType="Self.Blog" />
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="DegreeTbls" EntityType="Self.DegreeTbl" />
+          <EntitySet Name="EventMgmts" EntityType="Self.EventMgmt" />
+          <EntitySet Name="Loc_Districtn" EntityType="Self.Loc_Districtn" />
+          <EntitySet Name="Loc_State" EntityType="Self.Loc_State" />
+          <EntitySet Name="NewsTbls" EntityType="Self.NewsTbl" />
+          <EntitySet Name="Services" EntityType="Self.Service" />
+          <EntitySet Name="Sliders" EntityType="Self.Slider" />
+          <EntitySet Name="Upcoming_Events" EntityType="Self.Upcoming_Events" />
+          <EntitySet Name="UserQuesAns" EntityType="Self.UserQuesAn" />
+          <EntitySet Name="UserRegisters" EntityType="Self.UserRegister" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="mpfdbModelStoreContainer" CdmEntityContainer="mpfdbEntities1">
+          <EntitySetMapping Name="AdminLogins">
+            <EntityTypeMapping TypeName="mpfdbModel.AdminLogin">
+              <MappingFragment StoreEntitySet="AdminLogin">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="pasword" ColumnName="pasword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AnserTbls">
+            <EntityTypeMapping TypeName="mpfdbModel.AnserTbl">
+              <MappingFragment StoreEntitySet="AnserTbl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="Quesid" ColumnName="Quesid" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Blogs">
+            <EntityTypeMapping TypeName="mpfdbModel.Blog">
+              <MappingFragment StoreEntitySet="Blog">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="mpfdbModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DegreeTbls">
+            <EntityTypeMapping TypeName="mpfdbModel.DegreeTbl">
+              <MappingFragment StoreEntitySet="DegreeTbl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="degree" ColumnName="degree" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EventMgmts">
+            <EntityTypeMapping TypeName="mpfdbModel.EventMgmt">
+              <MappingFragment StoreEntitySet="EventMgmt">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loc_Districtn">
+            <EntityTypeMapping TypeName="mpfdbModel.Loc_Districtn">
+              <MappingFragment StoreEntitySet="Loc_Districtn">
+                <ScalarProperty Name="District_Code" ColumnName="District_Code" />
+                <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+                <ScalarProperty Name="State_Code" ColumnName="State_Code" />
+                <ScalarProperty Name="District_Priority" ColumnName="District_Priority" />
+                <ScalarProperty Name="District_Active" ColumnName="District_Active" />
+                <ScalarProperty Name="DisCode" ColumnName="DisCode" />
+                <ScalarProperty Name="pincode" ColumnName="pincode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loc_State">
+            <EntityTypeMapping TypeName="mpfdbModel.Loc_State">
+              <MappingFragment StoreEntitySet="Loc_State">
+                <ScalarProperty Name="State_Code" ColumnName="State_Code" />
+                <ScalarProperty Name="State_Name" ColumnName="State_Name" />
+                <ScalarProperty Name="Country_Code" ColumnName="Country_Code" />
+                <ScalarProperty Name="State_Priority" ColumnName="State_Priority" />
+                <ScalarProperty Name="State_Active" ColumnName="State_Active" />
+                <ScalarProperty Name="CourierState" ColumnName="CourierState" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NewsTbls">
+            <EntityTypeMapping TypeName="mpfdbModel.NewsTbl">
+              <MappingFragment StoreEntitySet="NewsTbl">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="mpfdbModel.Service">
+              <MappingFragment StoreEntitySet="Services">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Profession_id" ColumnName="Profession_id" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sliders">
+            <EntityTypeMapping TypeName="mpfdbModel.Slider">
+              <MappingFragment StoreEntitySet="Slider">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Upcoming_Events">
+            <EntityTypeMapping TypeName="mpfdbModel.Upcoming_Events">
+              <MappingFragment StoreEntitySet="Upcoming_Events">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Heading" ColumnName="Heading" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserQuesAns">
+            <EntityTypeMapping TypeName="mpfdbModel.UserQuesAn">
+              <MappingFragment StoreEntitySet="UserQuesAn">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="Professionid" ColumnName="Professionid" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRegisters">
+            <EntityTypeMapping TypeName="mpfdbModel.UserRegister">
+              <MappingFragment StoreEntitySet="UserRegister">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="useremail" ColumnName="useremail" />
+                <ScalarProperty Name="userpass" ColumnName="userpass" />
+                <ScalarProperty Name="Profession" ColumnName="Profession" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="District" ColumnName="District" />
+                <ScalarProperty Name="Village" ColumnName="Village" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="rts" ColumnName="rts" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

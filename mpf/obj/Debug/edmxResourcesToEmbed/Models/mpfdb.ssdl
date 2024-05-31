@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mpfdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AdminLogin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="pasword" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="AnserTbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Answer" Type="varchar(max)" />
+    <Property Name="Quesid" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="Heading" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="255" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DegreeTbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="degree" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="EventMgmt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="Heading" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Loc_Districtn">
+    <Key>
+      <PropertyRef Name="District_Code" />
+    </Key>
+    <Property Name="District_Code" Type="int" Nullable="false" />
+    <Property Name="District_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="State_Code" Type="smallint" Nullable="false" />
+    <Property Name="District_Priority" Type="tinyint" Nullable="false" />
+    <Property Name="District_Active" Type="bit" Nullable="false" />
+    <Property Name="DisCode" Type="int" Nullable="false" />
+    <Property Name="pincode" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Loc_State">
+    <Key>
+      <PropertyRef Name="State_Code" />
+    </Key>
+    <Property Name="State_Code" Type="int" Nullable="false" />
+    <Property Name="State_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Country_Code" Type="smallint" Nullable="false" />
+    <Property Name="State_Priority" Type="tinyint" Nullable="false" />
+    <Property Name="State_Active" Type="bit" Nullable="false" />
+    <Property Name="CourierState" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="NewsTbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" Nullable="false" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Profession_id" Type="varchar" MaxLength="255" />
+    <Property Name="Services" Type="varchar" MaxLength="255" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="Heading" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="varchar" MaxLength="55" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Upcoming_Events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="Heading" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserQuesAn">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Question" Type="nvarchar(max)" />
+    <Property Name="Professionid" Type="varchar" MaxLength="255" />
+    <Property Name="rts" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserRegister">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="255" />
+    <Property Name="useremail" Type="varchar" MaxLength="255" />
+    <Property Name="userpass" Type="varchar" MaxLength="255" />
+    <Property Name="Profession" Type="int" />
+    <Property Name="Address" Type="varchar" MaxLength="255" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="255" />
+    <Property Name="PhoneNumber2" Type="varchar" MaxLength="255" />
+    <Property Name="State" Type="int" />
+    <Property Name="District" Type="int" />
+    <Property Name="Village" Type="varchar" MaxLength="255" />
+    <Property Name="image" Type="varchar" MaxLength="255" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="status" Type="bit" />
+    <Property Name="rts" Type="datetime" />
+    <Property Name="Post" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="mpfdbModelStoreContainer">
+    <EntitySet Name="AdminLogin" EntityType="Self.AdminLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AnserTbl" EntityType="Self.AnserTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DegreeTbl" EntityType="Self.DegreeTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EventMgmt" EntityType="Self.EventMgmt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loc_Districtn" EntityType="Self.Loc_Districtn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Loc_State" EntityType="Self.Loc_State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsTbl" EntityType="Self.NewsTbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Services" EntityType="Self.Services" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Upcoming_Events" EntityType="Self.Upcoming_Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserQuesAn" EntityType="Self.UserQuesAn" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRegister" EntityType="Self.UserRegister" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

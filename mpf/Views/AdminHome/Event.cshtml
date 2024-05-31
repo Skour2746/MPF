@@ -1,0 +1,106 @@
+﻿@model mpf.Models.EventMgmt
+
+@{
+    ViewBag.Title = "Event";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
+
+<h2>Event</h2>
+
+@using (Html.BeginForm("Event", "AdminHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Events Form</h4>
+                <div class="forms-sample">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.image, htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.image, new { htmlAttributes = new { @class = "form-control", type = "file" } })
+                                    @Html.ValidationMessageFor(model => model.image, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Heading, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Heading, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Heading, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.TextAreaFor(model => model.Description, new { id = "editor" })
+                                    <script>
+                                        CKEDITOR.replace('editor');
+                                    </script>
+                                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                </div>
+                <br />
+                <label style="color:red;">@ViewBag.status</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Category Table</h4>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>image</th>
+                                <th>Headin)</th>
+                                <th>Description</th>
+
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Eventlist)
+                            {
+                            <tr>
+                                <td>
+                                    @item.id
+                                </td>
+                                <td>
+                                    <img src="~/Content/mpfimages/EventMgmt/@item.image" />
+                                </td>
+                                <td>
+                                    @item.Heading
+                                </td>
+                                <td>
+                                    @item.Description
+                                </td>
+                                <td>  @Html.ActionLink("Edit", "Event", new { id = item.id })</td>
+                                <td>  @Html.ActionLink("Delete", "EventDelete", new { id = item.id })</td>
+                            </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

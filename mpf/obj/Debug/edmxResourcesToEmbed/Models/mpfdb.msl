@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="mpfdbModelStoreContainer" CdmEntityContainer="mpfdbEntities1">
+    <EntitySetMapping Name="AdminLogins">
+      <EntityTypeMapping TypeName="mpfdbModel.AdminLogin">
+        <MappingFragment StoreEntitySet="AdminLogin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pasword" ColumnName="pasword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnserTbls">
+      <EntityTypeMapping TypeName="mpfdbModel.AnserTbl">
+        <MappingFragment StoreEntitySet="AnserTbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="Quesid" ColumnName="Quesid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blogs">
+      <EntityTypeMapping TypeName="mpfdbModel.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="mpfdbModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DegreeTbls">
+      <EntityTypeMapping TypeName="mpfdbModel.DegreeTbl">
+        <MappingFragment StoreEntitySet="DegreeTbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="degree" ColumnName="degree" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EventMgmts">
+      <EntityTypeMapping TypeName="mpfdbModel.EventMgmt">
+        <MappingFragment StoreEntitySet="EventMgmt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loc_Districtn">
+      <EntityTypeMapping TypeName="mpfdbModel.Loc_Districtn">
+        <MappingFragment StoreEntitySet="Loc_Districtn">
+          <ScalarProperty Name="District_Code" ColumnName="District_Code" />
+          <ScalarProperty Name="District_Name" ColumnName="District_Name" />
+          <ScalarProperty Name="State_Code" ColumnName="State_Code" />
+          <ScalarProperty Name="District_Priority" ColumnName="District_Priority" />
+          <ScalarProperty Name="District_Active" ColumnName="District_Active" />
+          <ScalarProperty Name="DisCode" ColumnName="DisCode" />
+          <ScalarProperty Name="pincode" ColumnName="pincode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Loc_State">
+      <EntityTypeMapping TypeName="mpfdbModel.Loc_State">
+        <MappingFragment StoreEntitySet="Loc_State">
+          <ScalarProperty Name="State_Code" ColumnName="State_Code" />
+          <ScalarProperty Name="State_Name" ColumnName="State_Name" />
+          <ScalarProperty Name="Country_Code" ColumnName="Country_Code" />
+          <ScalarProperty Name="State_Priority" ColumnName="State_Priority" />
+          <ScalarProperty Name="State_Active" ColumnName="State_Active" />
+          <ScalarProperty Name="CourierState" ColumnName="CourierState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NewsTbls">
+      <EntityTypeMapping TypeName="mpfdbModel.NewsTbl">
+        <MappingFragment StoreEntitySet="NewsTbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="mpfdbModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Profession_id" ColumnName="Profession_id" />
+          <ScalarProperty Name="Services" ColumnName="Services" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sliders">
+      <EntityTypeMapping TypeName="mpfdbModel.Slider">
+        <MappingFragment StoreEntitySet="Slider">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Upcoming_Events">
+      <EntityTypeMapping TypeName="mpfdbModel.Upcoming_Events">
+        <MappingFragment StoreEntitySet="Upcoming_Events">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Heading" ColumnName="Heading" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserQuesAns">
+      <EntityTypeMapping TypeName="mpfdbModel.UserQuesAn">
+        <MappingFragment StoreEntitySet="UserQuesAn">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Question" ColumnName="Question" />
+          <ScalarProperty Name="Professionid" ColumnName="Professionid" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRegisters">
+      <EntityTypeMapping TypeName="mpfdbModel.UserRegister">
+        <MappingFragment StoreEntitySet="UserRegister">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="useremail" ColumnName="useremail" />
+          <ScalarProperty Name="userpass" ColumnName="userpass" />
+          <ScalarProperty Name="Profession" ColumnName="Profession" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="PhoneNumber2" ColumnName="PhoneNumber2" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="District" ColumnName="District" />
+          <ScalarProperty Name="Village" ColumnName="Village" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="rts" ColumnName="rts" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
